@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './style.css';
-import Login from '../Components/Login';
-import SuccessMessage from '../Components/Success';
+import Login from '../components/Login';
+import SuccessMessage from '../components/Success';
 
 /**
  * @name Login
