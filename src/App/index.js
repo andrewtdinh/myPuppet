@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './style.css';
-import logo from '../logo.png';
 import Login from '../Components/Login';
 import SuccessMessage from '../Components/Success';
 

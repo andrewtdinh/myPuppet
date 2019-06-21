@@ -18,7 +18,7 @@ describe('on page load', () => {
       viewport: {
         width: 500,
         height: 2400,
-      }
+      },
       userAgent: ''
     });
 
