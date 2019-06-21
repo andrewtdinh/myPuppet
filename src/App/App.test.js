@@ -24,7 +24,7 @@ describe('on page load', () => {
 
     await page.goto('http://localhost:3000/');
     const html = await page.$eval('.App-title', e => e.innerHTML);
-    expect(html).toBe('Welcome to React');
+    expect(html).toBe('Testing Your App with Puppeteer and Jest');
     browser.close();
   }, 16000); 
 });
