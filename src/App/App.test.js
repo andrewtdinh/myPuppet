@@ -27,8 +27,6 @@ afterAll(() => {
 
 describe('on page load', () => {
   test('h1 loads correctly', async() => {
-    // let browser = await puppeteer.launch({});
-    // let page = await browser.newPage();
     
     page.emulate({
       viewport: {
@@ -38,9 +36,14 @@ describe('on page load', () => {
       userAgent: ''
     });
 
-    // await page.goto('http://localhost:3000/');
     const html = await page.$eval('.App-title', e => e.innerHTML);
     expect(html).toBe('Testing Your App with Puppeteer and Jest');
-    browser.close();
   }, 16000); 
+
+  test("nav loads correctly", async () => {
+    const navbar = await page.$eval(".navbar", el => (el ? true : false));
+    const listItems = await page.$$(".nav-li");
+    expect(navbar).toBe(true);
+    expect(listItems.length).toBe(4);
+  });
 });
