@@ -19,6 +19,12 @@ beforeAll(async () => {
   page.setViewport({ width: 500, height: 2400 })
 })
 
+afterAll(() => {
+  if (isDebugging()) {
+    browser.close();
+  }
+});
+
 describe('on page load', () => {
   test('h1 loads correctly', async() => {
     // let browser = await puppeteer.launch({});
