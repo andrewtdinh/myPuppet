@@ -9,10 +9,20 @@ const isDebugging = () => {
   return process.env.NODE_ENV === 'debug' ? debugging_mode : {};
 }
 
+let browser;
+let page;
+
+beforeAll(async () => { 
+  browser = await puppeteer.launch(isDebugging());
+  page = await browser.newPage(); 
+  await page.goto('http://localhost:3000/'); 
+  page.setViewport({ width: 500, height: 2400 })
+})
+
 describe('on page load', () => {
   test('h1 loads correctly', async() => {
-    let browser = await puppeteer.launch({});
-    let page = await browser.newPage();
+    // let browser = await puppeteer.launch({});
+    // let page = await browser.newPage();
     
     page.emulate({
       viewport: {
@@ -22,7 +32,7 @@ describe('on page load', () => {
       userAgent: ''
     });
 
-    await page.goto('http://localhost:3000/');
+    // await page.goto('http://localhost:3000/');
     const html = await page.$eval('.App-title', e => e.innerHTML);
     expect(html).toBe('Testing Your App with Puppeteer and Jest');
     browser.close();
