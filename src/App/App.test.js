@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const faker = require('faker');
 
 const isDebugging = () => {
   const debugging_mode = {
@@ -8,6 +9,12 @@ const isDebugging = () => {
   };
   return process.env.NODE_ENV === 'debug' ? debugging_mode : {};
 }
+const user = {
+  email: faker.internet.email(),
+  password: "test",
+  firstName: faker.name.firstName(),
+  lastName: faker.name.lastName()
+};
 
 let browser;
 let page;
