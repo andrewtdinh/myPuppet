@@ -4,10 +4,9 @@ const faker = require('faker');
 const isDebugging = () => {
   const debugging_mode = {
     headless: false,
-    slowMo: 500,
+    slowMo: 250,
     devtools: true,
   };
-  console.log(process.env.NODE_ENV)
   return process.env.NODE_ENV === 'debug' ? debugging_mode : {};
 }
 const user = {
