@@ -49,14 +49,14 @@ describe('on page load', () => {
     await page.click('[data-testid="firstName"]');
     await page.type('[data-testid="lastName"]', user.firstName);
 
-    await page.click('[data-testid="firstName"]');
-    await page.type('[data-testid="lastName"]', user.lastName);
+    // await page.click('[data-testid="firstName"]');
+    // await page.type('[data-testid="lastName"]', user.lastName);
 
-    await page.click('[data-testid="email"]');
-    await page.type('[data-testid="email"]', user.email);
-    await page.click('[data-testid="password"]');
-    await page.type('[data-testid="password"]', user.password);
-    await page.click('[data.testid="submit"]');
-    await page.waitForSelector('[data-testid="success"]');
+    // await page.click('[data-testid="email"]');
+    // await page.type('[data-testid="email"]', user.email);
+    // await page.click('[data-testid="password"]');
+    // await page.type('[data-testid="password"]', user.password);
+    // await page.click('[data.testid="submit"]');
+    // await page.waitForSelector('[data-testid="success"]');
   }, 1600);
 });
