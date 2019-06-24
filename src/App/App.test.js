@@ -46,7 +46,7 @@ describe('on page load', () => {
   });
 
   test("login form works correctly", async () => {
-    await page.click('[data-testid="firstName"]');
+    await page.click('input[data-testid="firstName"]');
     await page.type('[data-testid="lastName"]', user.firstName);
 
     // await page.click('[data-testid="firstName"]');
