@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "faker": "^4.1.0",
-    "puppeteer": "^1.4.0"
+    "puppeteer": "^1.13.0"
   }
 }
